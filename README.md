@@ -1,0 +1,2 @@
+# miniProject
+Angular mini project

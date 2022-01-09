@@ -1,0 +1,44 @@
+.container {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productPic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.productContent{
+
+}
+.new{
+  background-color: #5099f4;
+  width: 2.5vw;
+  color:#fff;
+  font-size: 0.8rem;
+  font-weight: blod;
+}
+
+.price{
+  color : #FE980F;
+  font-size:  26px;
+  font-weight: blod;
+}
+
+input {
+  border : 1px solid #ccc;
+  font-weight: bold;
+  height : 33px;
+  text-align: center;
+  width: 30px;
+  margin-left : 5px;
+}
+.cart {
+  background-color: #FE980F;
+  color : #fff;
+  font-size: 15px;
+  margin-left: 20px;
+}

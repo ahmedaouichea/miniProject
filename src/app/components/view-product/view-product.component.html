@@ -1,0 +1,27 @@
+
+<div class="mt-5">
+  <h1 class="text-center"> Product Page </h1>
+</div>
+
+<div class="container mb-5">
+      <div class="row prod">
+          <div class="col-5 productPic">
+              <img class="d-block w-100" src="https://dyw7ncnq1en5l.cloudfront.net/optim/product/62/62435/6d0d7e48-surface-laptop-4-amd-ryzen-7-4980u_png__w1280.jpg">
+
+          </div>
+
+          <div class="col-7 productContent">
+               <p class="new text-center">NEW</p>
+                <h2> {{product.name}}</h2>
+                <p><strong>Product Code</strong> : Random One</p>
+                <p><strong>Description : </strong>: {{product.description}}</p>
+
+                <p class="price"> Price : {{product.price | currency : 'USD'}}</p>
+                <label><strong> Quantity : </strong></label>
+                <input type="text" value="1">
+                <button type="button" class="btn btn-default cart"> Add to cart </button>
+
+          </div>
+
+      </div>
+</div>

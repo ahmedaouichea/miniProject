@@ -1,0 +1,20 @@
+  <td>
+    {{productItem.id}}
+  </td>
+
+    <td>
+     <a routerLink="/view-product/{{productItem.id}}"> {{productItem.name}}</a>
+    </td>
+
+  <td>
+   {{productItem.description | slice: 0:50}}
+  </td>
+  <td>
+    {{productItem.price | currency: 'USD'}}
+  </td>
+  <td>
+    <button (click)="sendEventToEdit(productItem)" class="btn btn-info m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edit</button>
+    <button (click)="sendEventToDelete(productItem)" class="btn btn-danger"> delete</button>
+  </td>
+
+

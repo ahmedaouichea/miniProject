@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
-import { Observable } from 'rxjs';
+import { Observable,of, BehaviorSubject } from 'rxjs';
 import {map} from 'rxjs/operators';
 
 const apiUrl = 'http://localhost:3000/products/';
@@ -13,9 +13,17 @@ const loginUrl = 'http://localhost:3000/users';
 })
 export class ProductService {
 
-  products: Product[] = []
+  products: Product[] = [];
   status = "";
-  constructor(private http : HttpClient) { }
+  myvalue = false;
+
+  private isAgreeOk = new BehaviorSubject(false);
+
+
+
+  constructor(private http : HttpClient) {
+
+  }
 
   getProducts() : Observable<Product[]> {
       return this.http.get<Product[]>(apiUrl);
@@ -44,6 +52,28 @@ export class ProductService {
     }
 
     addProduct(data:any){
+
       return this.http.post<any>(apiUrl,data)
+
     }
+
+    isLogged1( ) : Observable<boolean>{
+
+      return of(localStorage.getItem('isLogged')==="true")
+    }
+
+    logout () {
+      localStorage.setItem('isLogged','false');
+    }
+
+    isLogged2(): Observable<boolean> {
+      return this.isAgreeOk;
+    };
+
+    setState(state : boolean): void {
+      this.isAgreeOk.next(state);
+    };
+
+
+
 }

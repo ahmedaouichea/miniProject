@@ -1,27 +1,29 @@
-<nav class="navbar p-3 navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
-  <div class="container">
-    <a class="navbar-brand" >LOGO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExample09">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/products">Products</a>
-        </li>
+  <mat-toolbar style="padding:40px">
+    <div class="mycontainer">
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/add-product">Add Product</a>
-        </li>
+      <div class="logoside">
 
-      </ul>
-      <form>
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </form>
+        <button mat-icon-button class="example-icon menu-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span style="margin-right:20px;">LOGO</span>
+        <span style="font-size:17px; margin-right:20px;" > <a mat-raised-button color= "primary" routerLink="/login"> Login </a> </span>
+        <span style="font-size:17px; margin-right:20px;" > <a mat-button routerLink="/products"> Products </a> </span>
+        <span style="font-size:17px; margin-right:20px;"><a mat-button routerLink="/add-product"> Add Product </a> </span>
+
+      </div>
+
+      <div>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </div>
+
+
     </div>
-  </div>
-</nav>
+  </mat-toolbar>
+

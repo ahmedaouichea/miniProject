@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { ShoppingComponent } from './components/shopping/shopping.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
-import { ViewProductComponent } from './components/view-product/view-product.component';
-
+import { AuthGuard } from './auth.guard';
+import { ShowProdGuard } from './show-prod.guard';
 const routes: Routes = [
 
-      {path: '', redirectTo:'/login', pathMatch:'full'},
-      {path: 'products', component : ShoppingComponent},
-      {path: 'login', component : LoginComponent},
-      {path: 'add-product', component : AddProductComponent},
-      {path: 'view-product/:id', component : ViewProductComponent},
-      {path: '**', component : PageNotFoundComponent},
+    {path: '', redirectTo:'/login', pathMatch:'full'},
+    {path: 'products', loadChildren:()=> import('./components/shopping/shopping.module').then(mod=>(mod.ShoppingModule)),
+      canLoad:[ShowProdGuard]
+  },
+    {path: 'login', loadChildren:() => import('./components/login/login.module').then(mod=>mod.LoginModule),
+    canLoad:[AuthGuard]
+  },
+
+    {path: 'add-product',loadChildren : () => import ('./components/add-product/add-product.module').then(mod=>(mod.AddProductModule)),
+    canLoad:[ShowProdGuard]
+    },
+    {path: 'view-product/:id', loadChildren:()=> import('./components/view-product/view-product.module').then(mod=>(mod.ViewProductModule)), },
+    {path: '**', loadChildren:() => import('./components/page-not-found/page-not-found.module').then(mod=>(mod.PageNotFoundModule))},
 
 
 ];

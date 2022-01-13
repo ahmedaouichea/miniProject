@@ -1,29 +1,53 @@
 
- <div class="table-responsive">
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
+  <!-- Material Table -->
 
-    <tbody>
+<table mat-table [dataSource]="products" class="mat-elevation-z8 demo-table">
 
-      <tr
-        app-product-item
-        *ngFor="let product of products"
-        [productItem]="product"
-        (childEventDelete)="deleteProduct($event)"
-        (childEventEdit)="editProductForm($event)">
-      </tr>
+ <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> <strong> ID. </strong> </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
 
-    </tbody>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> <strong> Name </strong> </th>
+    <td mat-cell *matCellDef="let element">
+   <a routerLink="/view-product/{{element.id}}">   {{element.name}}  </a>
+    </td>
+  </ng-container>
 
-  </table>
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>  <strong> Description </strong> </th>
+    <td mat-cell *matCellDef="let element"> {{element.description | slice: 0:50}} </td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>  <strong> Price </strong> </th>
+    <td mat-cell *matCellDef="let element"> <strong>{{element.price | currency: 'USD'}}  </strong></td>
+  </ng-container>
+
+     <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> <strong> Action </strong> </th>
+    <td mat-cell *matCellDef="let element">
+      <button class="edit" mat-mini-fab color="primary" (click) = "editProductForm(element)"   data-bs-toggle="modal" data-bs-target="#exampleModal"> <mat-icon>edit</mat-icon></button>
+      <button mat-mini-fab color="warn" (click) = "deleteProduct(element)" ><mat-icon>delete</mat-icon> </button>
+    </td>
+
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+</table>
+
+<br>
+<br>
+
 
  <!-- Edit Modal -->
 
@@ -68,4 +92,3 @@
 </div>
 
 
-</div>

@@ -1,0 +1,52 @@
+table {
+  width: 100%;
+}
+.mainDiv{
+   min-height: 700px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content:center;
+   margin-top: 50px;
+
+}
+.sideFilter{
+  flex-grow: 1;
+  max-width :300px;
+
+}
+
+.contentDiv{
+  flex-grow: 6;
+  min-width: 250px;
+  min-height: 200px;
+  padding : 20px;
+
+}
+
+.tableHeader{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      height : 50px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+.tableTitle{
+
+  display: flex;
+  flex-grow:4;
+  padding-left: 20px;
+  padding-top: 10px;
+  justify-content: start;
+}
+
+
+.tableButtons{
+
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  padding: 5px;
+
+
+}

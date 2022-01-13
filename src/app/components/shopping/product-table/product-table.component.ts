@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit,ViewChild } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 import { FormBuilder,FormGroup } from '@angular/forms';
+
 
 
 
@@ -23,14 +24,25 @@ export class ProductTableComponent implements OnInit {
 
   }
 
+
+
   ngOnInit(): void {
     this.getProducts();
+
+
     this.formValue = this.formbuilder.group({
       name : [''],
       description : [''],
       price : ['']
     })
 }
+
+
+
+  displayedColumns: string[] = ['id', 'name', 'description', 'price','action'];
+  dataSource = this.products;
+
+
 
   getProducts(){
     this.productService.getProducts().subscribe( (productsFromService)=>{
@@ -67,5 +79,9 @@ editProduct() {
     })
 
 }
+
+
+
+
 
 }

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcrudProject=self.webpackChunkcrudProject||[]).push([[592],{28:(d,c,s)=>{s.d(c,{x:()=>e});class e{constructor(t,u,r,i){this.id=t,this.name=u,this.description=r,this.price=i}}}}]);

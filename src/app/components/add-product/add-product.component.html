@@ -1,58 +1,50 @@
 
-<div class="container">
+<div class="containers" fxLayoutAlign="center center">
 
-  <div class="row">
-      <div class="mydiv">
-        <div class="card">
+              <mat-card class="my_card">
+                <mat-card-header fxLayoutAlign="center"> <!-- Card Header-->
+                    <mat-card-title>  <!-- Card Title-->
+                        Add new product
+                      </mat-card-title>
+                      <mat-card-subtitle>   <!-- Card SubTitle-->
+                        Please enter product infos
+                      </mat-card-subtitle>
+              </mat-card-header>
+                <mat-card-content  fxLayout="column" fxLayoutAlign="center center">  <!-- Card Content-->
+                  <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+                      <div class="mb-3">
+                          <mat-form-field  appearance="outline">
+                            <mat-label>Product Name</mat-label>
+                            <input matInput formControlName="name" type="text">
+                            </mat-form-field>
+                        </div>
 
-            <div class="text-center">
-                <h1>Add new product</h1>
-                <h5>Please enter product infos</h5>
-            </div>
+                      <div class="mb-3">
+                        <mat-form-field color="accent" appearance="outline" >
+                            <mat-label>Product Description</mat-label>
+                            <textarea matInput formControlName="description" type="text"> </textarea>
+                        </mat-form-field>
+                      </div>
 
-            <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+                    <div class="mb-3">
 
+                      <mat-form-field color="accent" appearance="outline" >
+                        <mat-label>Product Price</mat-label>
+                        <input matInput formControlName="price" type="number">
+                      </mat-form-field>
 
-              <div style="display:flex; flex-direction: column ;align-items: center;">
+                    </div>
+                    <div class="buttonSubmitCenter">
+                      <button color="accent" mat-raised-button type="submit" >Submit</button>
+                    </div>
 
-                <div class="mb-3">
-                  <mat-form-field  color="accent" appearance="outline">
-                    <mat-label>Product Name</mat-label>
-                    <input matInput formControlName="name" type="text">
-                </mat-form-field>
+                  </form>
+                </mat-card-content>
 
-                </div>
-
-                <div class="mb-3">
-                  <mat-form-field color="accent" appearance="outline" >
-                    <mat-label>Product Description</mat-label>
-                    <textarea matInput formControlName="description" type="text"> </textarea>
-                  </mat-form-field>
-
-                </div>
-
-                  <div class="mb-3">
-
-                    <mat-form-field color="accent" appearance="outline" >
-                      <mat-label>Product Price</mat-label>
-                      <input matInput formControlName="price" type="text">
-                    </mat-form-field>
-
-                  </div>
-
-                  <button color="accent" mat-raised-button style="color:#000;width:35%!important" type="submit" >Submit</button>
-
-              </div>
-
+              </mat-card>
 
 
 
-            </form>
 
-
-
-        </div>
-      </div>
   </div>
-</div>
 

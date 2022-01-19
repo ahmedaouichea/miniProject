@@ -29,3 +29,6 @@ a{
   text-decoration: none;
   font-weight: bold;
 }
+.mat-sort-header-arrow{
+  color:aqua
+}

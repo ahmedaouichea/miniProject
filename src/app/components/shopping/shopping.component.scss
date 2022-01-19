@@ -2,6 +2,13 @@ table {
   width: 100%;
 }
 .mainDiv{
+  /*for centering*/
+  padding-right: 10px;
+  padding-left: 10px;
+  margin : 0 auto;
+  width: 70%;
+  /*for centering*/
+
    min-height: 700px;
    display: flex;
    flex-wrap: wrap;

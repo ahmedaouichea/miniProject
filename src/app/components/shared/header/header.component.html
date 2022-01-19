@@ -1,29 +1,28 @@
-
-  <mat-toolbar style="padding:40px">
-    <div class="mycontainer">
-
-      <div class="logoside">
-
-        <button mat-icon-button class="example-icon menu-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span style="margin-right:20px;">LOGO</span>
-        <span style="font-size:17px; margin-right:20px;" > <a mat-raised-button color= "primary" routerLink="/login"> Login </a> </span>
-        <span style="font-size:17px; margin-right:20px;" > <a mat-button routerLink="/products"> Products </a> </span>
-        <span style="font-size:17px; margin-right:20px;"><a mat-button routerLink="/add-product"> Add Product </a> </span>
-
-      </div>
-
-      <div>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </div>
+<!--NavBar Section -->
+<mat-toolbar class="toolbarItems">
 
 
-    </div>
-  </mat-toolbar>
+  <h1 class="logoSide">Logo</h1>
 
+
+    <button  mat-icon-button class="menu-icon"  (click)="changeState()">
+      <mat-icon *ngIf="!clicked">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="clicked">
+        close
+      </mat-icon>
+     </button>
+
+         <ul [ngClass]="{'active' : clicked , 'buttonside' : !clicked }" >
+             <li class="element" *ngFor="let menuItem of menuItems">
+                 <button mat-button class={{menuItem.class}} routerLink={{menuItem.url}}>
+                   <mat-icon>{{menuItem.icon}}</mat-icon>
+                    <span> {{menuItem.title}}</span>
+                 </button>
+             </li>
+         </ul>
+
+
+</mat-toolbar>
+<!--SideBar Section For Mobile -->

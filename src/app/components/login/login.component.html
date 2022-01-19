@@ -1,40 +1,59 @@
+<div class="mainAuthContainer" fxLayout="row">
 
-<div class="container">
-
-  <div class="row">
-      <div class="mydiv">
-        <div class="card">
-
-            <div class="text-center">
-                <h1>Login</h1>
-                <h5>Please enter email & password !!</h5>
-            </div>
-
-            <form [formGroup]="signInForm" (ngSubmit)="login()">
-
-         <div style="display:flex; flex-direction: column ;align-items: center;">
-
-              <div class="mb-3">
-                <mat-form-field color="accent" appearance="outline">
-                  <mat-label>Username</mat-label>
-                  <input matInput formControlName="username" type="text">
-                 </mat-form-field>
-              </div>
-
-              <div class="mb-3">
-                <mat-form-field  color="accent" appearance="outline">
-                  <mat-label >Password</mat-label>
-                  <input matInput formControlName="password" type="text">
-                 </mat-form-field>
-              </div>
-
-              <button color="accent" mat-raised-button style="color:#000;width:35%!important" type="submit" >Submit</button>
-          </div>
-
-            </form>
-
-        </div>
-      </div>
-  </div>
+<div class="imageContainer" fxFlex="3 3 77%" fxHide.xs >
+    <img src="assets/pics/login/picBig.jpg" class="loginImage" alt="image" />
 </div>
 
+<div class="loginContainer" fxLayout="column" fxLayoutAlign="start center" fxFlex.xs="stretch" fxFlex="1 1 23%" >
+
+    <div class="seConnecter">
+      <span>
+        Se connecter à votre compte
+      </span>
+    </div>
+
+    <div class="loginInfos">
+
+      <form class="myform" [formGroup]="signInForm" (ngSubmit)="login()">
+        <div>
+            <mat-form-field color="primary" appearance="outline">
+              <mat-label>Adresse e-mail</mat-label>
+              <input matInput formControlName="username" required type="text">
+              </mat-form-field>
+          </div>
+
+      <div>
+        <mat-form-field color="primary" appearance="outline" >
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" required type="password">
+        </mat-form-field>
+      </div>
+
+      <div class="rememberMe">
+        <mat-checkbox>Se souvenir de moi</mat-checkbox>
+        <a routerLink="/forget-password">Mot de passe oublié ?</a>
+      </div>
+
+      <div class="buttonSubmitCenter">
+        <button color="primary" mat-raised-button type="submit" >Se connecter</button>
+      </div>
+
+      <div class="dividerr">
+        <mat-divider></mat-divider>
+        <span>OU</span>
+        <mat-divider></mat-divider>
+      </div>
+    </form>
+
+    <div class="register">
+        <span> Vous n'avez pas de compte ? </span>
+        <span> <a routerLink="/register"> Créer un compte </a></span>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+</div>

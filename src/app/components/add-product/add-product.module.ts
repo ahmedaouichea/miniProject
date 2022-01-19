@@ -4,6 +4,7 @@ import { AddProductRoutingModule } from './add-product-routing.module';
 import { AddProductComponent } from './add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 console.warn("add-prod module is loaded");
 
@@ -13,8 +14,10 @@ console.warn("add-prod module is loaded");
   imports: [
     CommonModule,
     AddProductRoutingModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+
   ]
 })
 export class AddProductModule { }

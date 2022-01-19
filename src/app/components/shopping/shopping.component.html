@@ -1,8 +1,8 @@
 
-  <div class="mainDiv">
+  <div class="mainDiv mat-elevation-z4">
 
       <div class="sideFilter">
-        <app-search></app-search>
+        <app-search (searchValueEvent)="table.filter($event)"></app-search> <!--  comp2 -->
       </div>
 
       <div class="contentDiv">
@@ -22,7 +22,7 @@
               </div>
           </div>
           <div>
-            <app-product-table></app-product-table>
+        <app-product-table #table  ></app-product-table> <!--  comp1 -->
 
           </div>
       </div>

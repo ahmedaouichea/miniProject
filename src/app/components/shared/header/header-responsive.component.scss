@@ -1,0 +1,78 @@
+/* Responsive Header Code */
+
+@import "./header.component.scss";
+
+
+@media screen and (max-width : 960px) {
+
+  .toolbarItems{
+    position: relative;
+  }
+    .buttonside{
+       left: -100%;
+       @extend %menu_elements;
+    }
+    .active {
+      @extend %menu_elements;
+      left: 0%;
+      z-index: 1;
+
+    }
+    .mat-button{
+      text-align: center;
+      padding: 1.77rem;
+      width: 100%;
+
+    }
+    .menu-icon{
+      display: block;
+      position: absolute;
+      top:0;
+      right:0;
+      font-size: 1.9rem;
+    }
+    .element {
+      margin: 0;
+      padding: 0;
+      }
+
+    %menu_elements{
+      background : $primary_color;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      list-style : none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 80px;
+      color: #fff;
+      opacity: 1;
+      transition: all 0.5s ease;
+
+    }
+
+  }
+
+/*
+  mat-sidenav-container{
+    /* height of sidenav container = height 100vh - 65px height of toolbar
+    height: calc(100vh - 65px);
+    text-align: center;
+    display: block;
+    background-color: crimson;
+
+  }
+
+  .mat-sidenav{
+    display: block;
+    height: calc(100vh - 65px);
+    width:200px;
+    background: $primary_color;
+    color:#fff;
+    text-align: center;
+  }
+
+
+}
+*/

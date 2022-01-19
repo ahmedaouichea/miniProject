@@ -1,0 +1,44 @@
+.containers{
+    min-height: 600px;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.my_card {
+    width : 400px;
+    padding : 40px;
+  }
+
+  mat-label{
+    font-size: medium;
+  }
+form{
+  width: 80%;
+
+}
+mat-label{
+  font-size: medium;
+}
+.buttonSubmitCenter{
+  display: flex;
+  justify-content: center;
+  button{
+    width: 80%;
+  }
+}
+
+
+/*
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+     color: crimson;
+  }
+  mat-form-field {
+     .mat-hint, input, ::placeholder, .mat-form-field-label {
+
+     }
+  }
+}
+*/

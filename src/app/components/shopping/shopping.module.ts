@@ -20,4 +20,8 @@ console.warn("products module is loaded");
     MaterialModule
   ]
 })
-export class ShoppingModule { }
+export class ShoppingModule {
+
+
+
+}

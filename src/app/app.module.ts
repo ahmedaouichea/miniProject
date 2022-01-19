@@ -8,6 +8,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    FlexLayoutModule,
+    MaterialModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

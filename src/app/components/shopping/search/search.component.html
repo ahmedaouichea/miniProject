@@ -14,10 +14,14 @@
     <hr>
 
     <br>
-    <mat-form-field floatLabel="never" appearance="outline">
-      <mat-label >Price from</mat-label>
-      <input matInput >
-    </mat-form-field>
+    <form [formGroup]="addTagForm" (ngSubmit)="addTags()" >
+      <mat-form-field floatLabel="never" appearance="outline">
+        <mat-label >Price from</mat-label>
+        <input formControlName="tag" matInput >
+      </mat-form-field>
+      <button color="accent" mat-raised-button type="submit">Submit</button>
+    </form>
+
 
     <mat-form-field floatLabel="never" appearance="outline">
       <mat-label>Price to</mat-label>

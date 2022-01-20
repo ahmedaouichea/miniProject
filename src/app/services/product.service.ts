@@ -25,6 +25,12 @@ export class ProductService {
 
   }
 
+
+  addProductTag (companyId: number,  product : Product) {
+      return this.http.put<any>(apiUrl+companyId, product);
+    }
+
+
   getProducts() : Observable<Product[]> {
       return this.http.get<Product[]>(apiUrl);
   }

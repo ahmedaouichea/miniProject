@@ -24,7 +24,7 @@ export class ProductTableComponent implements OnInit {
    @ViewChild(MatSort ) sort = new MatSort;
    @ViewChild(MatPaginator) paginator ?: MatPaginator;
 
-   constructor(private productService : ProductService, private formbuilder : FormBuilder) {
+   constructor(private productService : ProductService, private formbuilder : FormBuilder)  {
 
   }
 

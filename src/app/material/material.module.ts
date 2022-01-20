@@ -10,12 +10,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 const Material = [MatButtonModule,MatTableModule,MatCardModule,
                 MatInputModule,MatIconModule,MatToolbarModule,
                 MatDividerModule ,MatSidenavModule,MatSortModule,
-                MatPaginatorModule,MatCheckboxModule
+                MatPaginatorModule,MatCheckboxModule,MatAutocompleteModule
 
 ]
 
